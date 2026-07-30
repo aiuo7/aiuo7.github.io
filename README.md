@@ -1303,12 +1303,12 @@
         <div class="s-group">
             <label>🌤️ 天气特效</label>
             <div class="s-row">
-                <button class="s-btn active" data-weather="sunny">☀️ 晴</button>
-                <button class="s-btn" data-weather="rainy">🌧️ 雨</button>
-                <button class="s-btn" data-weather="snowy">❄️ 雪</button>
-                <button class="s-btn" data-weather="foggy">🌫️ 雾</button>
-                <button class="s-btn" data-weather="cloudy">☁️ 多云</button>
-                <button class="s-btn" data-weather="none">⏸️ 关</button>
+                <button class="s-btn active" data-weather="sunny">晴</button>
+                <button class="s-btn" data-weather="rainy">雨</button>
+                <button class="s-btn" data-weather="snowy">雪</button>
+                <button class="s-btn" data-weather="foggy">雾</button>
+                <button class="s-btn" data-weather="cloudy">多云</button>
+                <button class="s-btn" data-weather="none">关</button>
             </div>
             <div class="s-row mt-8">
                 <input type="text" id="weatherCity" placeholder="城市" style="flex:1;min-width:60px;" />
@@ -1354,7 +1354,7 @@
                         <div class="avatar-hint"><i class="fas fa-camera" style="margin-right:5px;"></i>更换头像</div>
                     </div>
                     <div class="nickname-wrap">
-                        <div class="nickname-text" id="nickDisplay">✨ 我的小宇宙</div>
+                        <div class="nickname-text" id="nickDisplay">你没有名字吗</div>
                     </div>
                 </div>
 
@@ -1467,17 +1467,17 @@
                 avatarStyle: 'solid',
                 avatarColor: '#ffffff',
                 avatarWidth: 3,
-                nickText: '✨ 我的小宇宙',
+                nickText: '请输入文本',
                 nickFont: "'Segoe UI', sans-serif",
                 nickSize: '28px',
                 nickColor1: '#f093fb',
                 nickColor2: '#f5576c',
                 nickDir: '135deg',
-                messageText: '用文字记录生活，用热爱点亮每一天 ☀️',
+                messageText: '你难道没有个性签名吗？',
                 weatherType: 'sunny',
                 weatherEnabled: true,
-                weatherCity: '北京',
-                weatherTemp: 26,
+                weatherCity: '中国-北京',
+                weatherTemp: 36℃,
                 files: [],
                 player: {
                     currentIndex: -1,
@@ -1530,7 +1530,7 @@
                         if (!data.borderColor) data.borderColor = '#ffffff';
                         if (!data.borderWidth) data.borderWidth = 2;
                         if (data.borderOpacity === undefined) data.borderOpacity = 1;
-                        if (!data.messageText) data.messageText = '用文字记录生活，用热爱点亮每一天 ☀️';
+                        if (!data.messageText) data.messageText = '你难道没有个性签名吗？';
                     }
                 } catch (e) {}
             }
@@ -1982,8 +1982,8 @@
                     rainAnimFrame = null; }
                 rainParticles = [];
                 const lrc = data.currentLyrics;
-                const texts = lrc.length > 0 ? lrc.map(l => l.content) : ['🎵 音乐流淌', '✨ 时光静好', '🌙 夜色温柔', '☀️ 阳光正好',
-                    '🌸 花开花落', '🍃 微风拂面'
+                const texts = lrc.length > 0 ? lrc.map(l => l.content) : ['逍遥法外', '零容忍', '八面薇风', '莉挽狂澜',
+                    '临容忍', '全无心肝'
                 ];
                 for (let i = 0; i < 30; i++) {
                     const idx = Math.floor(Math.random() * texts.length);
@@ -2039,7 +2039,8 @@
                     btn.innerHTML = '<i class="fas fa-cloud-rain" style="color:#6dd5ed;"></i>';
                     if (data.player.isPlaying) startLyricRain();
                     else {
-                        const texts = ['🎵 音乐流淌', '✨ 时光静好', '🌙 夜色温柔', '☀️ 阳光正好', '🌸 花开花落', '🍃 微风拂面'];
+                        const texts = [''逍遥法外', '零容忍', '八面薇风', '莉挽狂澜',
+            '临容忍', '全无心肝];
                         rainParticles = [];
                         for (let i = 0; i < 25; i++) {
                             const idx = Math.floor(Math.random() * texts.length);
@@ -2264,7 +2265,7 @@
                 if (!data.borderColor) data.borderColor = '#ffffff';
                 if (!data.borderWidth) data.borderWidth = 2;
                 if (data.borderOpacity === undefined) data.borderOpacity = 1;
-                if (!data.messageText) data.messageText = '用文字记录生活，用热爱点亮每一天 ☀️';
+                if (!data.messageText) data.messageText = '你难道没有个性签名吗？';
                 saveData();
                 showToast('✅ 已加载分享配置！', 2000);
                 return true;
@@ -2323,11 +2324,11 @@
                         if (!data.borderColor) data.borderColor = '#ffffff';
                         if (!data.borderWidth) data.borderWidth = 2;
                         if (data.borderOpacity === undefined) data.borderOpacity = 1;
-                        if (!data.messageText) data.messageText = '用文字记录生活，用热爱点亮每一天 ☀️';
+                        if (!data.messageText) data.messageText = '你难道没有个性签名吗？';
                         saveData();
                         fullRender();
-                        showToast('✅ 配置导入成功！', 2000);
-                    } catch (err) { showToast('⚠️ 配置文件无效', 2000); }
+                        showToast('配置导入成功！', 2000);
+                    } catch (err) { showToast('配置文件无效', 2000); }
                 };
                 reader.readAsText(file);
             }
@@ -2368,7 +2369,8 @@
                     $('#lyricRainToggle').classList.add('active');
                     if (data.player.isPlaying) startLyricRain();
                     else {
-                        const texts = ['🎵 音乐流淌', '✨ 时光静好', '🌙 夜色温柔', '☀️ 阳光正好', '🌸 花开花落', '🍃 微风拂面'];
+                        const texts = [''逍遥法外', '零容忍', '八面薇风', '莉挽狂澜',
+                    '临容忍', '全无心肝];
                         rainParticles = [];
                         for (let i = 0; i < 25; i++) {
                             const idx = Math.floor(Math.random() * texts.length);
@@ -2505,7 +2507,7 @@
                         data.avatarImage = cropped;
                         renderAvatar();
                         saveData();
-                        showToast('✅ 头像已更新', 1200);
+                        showToast('已上传', 1200);
                     });
                     e.target.value = '';
                 });
